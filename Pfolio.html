@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Pfolio.css">
+</head>
+<body>
+    <div id="form-container">
+        <form id="portfolio-form">
+            <h2>Remplissez vos informations</h2>
+            <input type="text" id="name" placeholder="Nom complet" required>
+            <input type="text" id="profession" placeholder="Profession" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="phone" placeholder="Numéro de téléphone" required>
+            <textarea id="about" placeholder="À propos de vous" required></textarea>
+            <button type="submit">Générer le Portfolio</button>
+        </form>
+    </div>
+
+    <div id="portfolio-container" style="display: none;">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about" class="reveal">
+            <div class="container">
+                <h1 id="portfolio-name"></h1>
+                <p id="portfolio-profession"></p>
+                <p id="portfolio-about"></p>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <div class="container">
+                <h2>Projets</h2>
+                <div id="project-list" class="project-grid"></div>
+                <form id="project-form">
+                    <input type="text" id="project-title" placeholder="Titre du projet" required>
+                    <textarea id="project-description" placeholder="Description du projet" required></textarea>
+                    <input type="file" id="project-image" accept="image/*" required>
+                    <button type="submit">Ajouter un projet</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="blog" class="reveal">
+            <div class="container">
+                <h2>Blog</h2>
+                <div id="blog-list" class="blog-grid"></div>
+                <form id="article-form">
+                    <input type="text" id="article-title" placeholder="Titre de l'article" required>
+                    <textarea id="article-summary" placeholder="Résumé de l'article" required></textarea>
+                    <input type="file" id="article-image" accept="image/*" required>
+                    <button type="submit">Ajouter un article</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Email: <span id="portfolio-email"></span></p>
+                <p>Numéro de téléphone: <span id="portfolio-phone"></span></p>
+            </div>
+        </section>
+
+        <button id="generate-final-portfolio">Voir la version définitive</button>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="final-portfolio-container" style="display: none;">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about-final">À propos</a></li>
+                    <li><a href="#projects-final">Projets</a></li>
+                    <li><a href="#blog-final">Blog</a></li>
+                    <li><a href="#contact-final">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about-final" class="reveal">
+            <div class="container">
+                <h1 id="final-portfolio-name"></h1>
+                <p id="final-portfolio-profession"></p>
+                <p id="final-portfolio-about"></p>
+            </div>
+        </section>
+
+        <section id="projects-final" class="reveal">
+            <div class="container">
+                <h2>Projets</h2>
+                <div id="final-project-list" class="project-grid"></div>
+            </div>
+        </section>
+
+        <section id="blog-final" class="reveal">
+            <div class="container">
+                <h2>Blog</h2>
+                <div id="final-blog-list" class="blog-grid"></div>
+            </div>
+        </section>
+
+        <section id="contact-final" class="reveal">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Email: <span id="final-portfolio-email"></span></p>
+                <p>Numéro de téléphone: <span id="final-portfolio-phone"></span></p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('portfolio-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+            
+            const name = document.getElementById('name').value;
+            const profession = document.getElementById('profession').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const about = document.getElementById('about').value;
+        
+            
+            document.getElementById('portfolio-name').textContent = name;
+            document.getElementById('portfolio-profession').textContent = profession;
+            document.getElementById('portfolio-email').textContent = email;
+            document.getElementById('portfolio-phone').textContent = phone;
+            document.getElementById('portfolio-about').textContent = about;
+        
+            
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('portfolio-container').style.display = 'block';
+        
+            
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 150;
+        
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        
+            window.addEventListener('scroll', function() {
+                for (let i = 0; i < reveals.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = reveals[i].getBoundingClientRect().top;
+                    let elementVisible = 150;
+        
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add('active');
+                    } else {
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        document.getElementById('project-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+            
+            const title = document.getElementById('project-title').value;
+            const description = document.getElementById('project-description').value;
+            const image = document.getElementById('project-image').files[0];
+        
+            
+            const project = document.createElement('div');
+            project.classList.add('project');
+        
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                project.innerHTML = `
+                    <img src="${e.target.result}" alt="${title}">
+                    <div class="overlay">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                    </div>
+                `;
+                document.getElementById('project-list').appendChild(project);
+            };
+            reader.readAsDataURL(image);
+        
+            
+            document.getElementById('project-form').reset();
+        });
+        
+        document.getElementById('article-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        
+            
+            const title = document.getElementById('article-title').value;
+            const summary = document.getElementById('article-summary').value;
+            const image = document.getElementById('article-image').files[0];
+        
+            
+            const article = document.createElement('div');
+            article.classList.add('blog-card');
+        
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                article.innerHTML = `
+                    <img src="${e.target.result}" alt="${title}">
+                    <div class="card-content">
+                        <h3>${title}</h3>
+                        <p>${summary}</p>
+                        <a href="#">Lire plus</a>
+                    </div>
+                `;
+                document.getElementById('blog-list').appendChild(article);
+            };
+            reader.readAsDataURL(image);
+        
+           
+            document.getElementById('article-form').reset();
+        });
+        
+        document.getElementById('generate-final-portfolio').addEventListener('click', function() {
+            
+            document.getElementById('final-portfolio-name').textContent = document.getElementById('portfolio-name').textContent;
+            document.getElementById('final-portfolio-profession').textContent = document.getElementById('portfolio-profession').textContent;
+            document.getElementById('final-portfolio-about').textContent = document.getElementById('portfolio-about').textContent;
+            document.getElementById('final-portfolio-email').textContent = document.getElementById('portfolio-email').textContent;
+            document.getElementById('final-portfolio-phone').textContent = document.getElementById('portfolio-phone').textContent;
+        
+            
+            const projectList = document.getElementById('project-list').cloneNode(true);
+            document.getElementById('final-project-list').innerHTML = projectList.innerHTML;
+        
+            
+            const blogList = document.getElementById('blog-list').cloneNode(true);
+            document.getElementById('final-blog-list').innerHTML = blogList.innerHTML;
+        
+           
+            document.getElementById('portfolio-container').style.display = 'none';
+            document.getElementById('final-portfolio-container').style.display = 'block';
+        
+            
+            const reveals = document.querySelectorAll('.reveal');
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 150;
+        
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                } else {
+                    reveals[i].classList.remove('active');
+                }
+            }
+        
+            window.addEventListener('scroll', function() {
+                for (let i = 0; i < reveals.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = reveals[i].getBoundingClientRect().top;
+                    let elementVisible = 150;
+        
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add('active');
+                    } else {
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash or Pass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="g.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Love Alarme Logo" class="logo">
+       
+    </header>
+    <main>
+        <div class="menu-button" onclick="toggleMenu()">
+            &#9776; Menu
+        </div>
+        <div class="sidebar" id="sidebar">
+           
+            <ul class="menu">
+                <li>
+                    <div class="search-box">
+                        <input type="text" placeholder="Rechercher...">
+                        <button>Search</button>
+                    </div>
+                </li>
+                <li><a href="#messagerie">Messagerie  <i class="fas fa-envelope"></i></a></li>
+                <li><a href="#profil">Profil  <i class="fas fa-user"></i></a></li>
+                <li><a href="#parametres">Paramètres  <i class="fas fa-cog"></i></a></li>
+            </ul>
+        </div>
+        <div class="profile-card">
+            <img src="ll.jpg" alt="Profile Picture" class="profile-picture">
+            <h2>Nom </h2>
+            <div class="profile-info">
+                <div class="info-box">
+                    <p><strong>Âge:</strong> 25</p>
+                </div>
+                <div class="info-box">
+                    <p><strong>Description:</strong> Gym</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="pass-btn">❌</button>
+            <button class="smash-btn">❤️</button>
+        </div>
+        <div class="hearts" id="hearts"></div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                sidebar.style.left = '-300px';
+            } else {
+                sidebar.classList.add('active');
+                sidebar.style.left = '0';
+            }
+        }
+    </script>
+</body>
+</html>

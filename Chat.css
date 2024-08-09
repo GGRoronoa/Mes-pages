@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.chat-container {
+    width: 400px;
+    height: 700px;
+    background-color:black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ff69b4;
+    color: white;
+}
+
+.back-button, .settings-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.contact-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #000040;
+}
+
+.message {
+    margin-bottom: 10px;
+    max-width: 70%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.received {
+    align-self: flex-start;
+    background-color: #ffe4e1;
+    color: #333;
+}
+
+.sent {
+    align-self: flex-end;
+    background-color: #ff69b4;
+    color: white;
+}
+
+.message-date {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #000040;
+    border-top: 1px solid #ddd;
+}
+
+.input-button {
+    background: none;
+    border: none;
+    color: #ff69b4;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.input-field {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    color: #ff69b4;
+    font-size: 24px;
+    cursor: pointer;
+}

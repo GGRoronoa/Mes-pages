@@ -1,0 +1,97 @@
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"] {
+    background-color: #3c3c3c;
+    border: 1px solid #555;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.birthday {
+    display: flex;
+    justify-content: space-between;
+}
+
+.birthday input {
+    width: 30%;
+}
+
+.genre {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.photos-de-profil {
+    margin-top: 20px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.photo-slot {
+    background-color: #3c3c3c;
+    border: 1px dashed #555;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.photo-slot span {
+    color: #ff0000;
+    font-size: 24px;
+}
+
+p {
+    font-size: 12px;
+    color: #bbb;
+}
+#afficher-genre {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    float: right;
+}

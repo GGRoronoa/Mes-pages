@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV en ligne animé</title>
+  <link rel="stylesheet" href="CV.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="profile-pic">
+        <img src="vue.jpg" alt="Votre nom">
+      </div>
+      <h1>Nom</h1>
+      <p class="title">Votre Profession</p>
+      <p class="contact-info">
+        Email : <a href="mailto:your.email@example.com"></a> | Téléphone : 
+      </p>
+    </header>
+
+    <section class="introduction">
+      <h2>À propos de moi</h2>
+      <form id="about-form">
+        <textarea id="about-text" rows="4" placeholder="Décrivez-vous ici..."></textarea>
+      </form>
+    </section>
+
+    <section class="experience">
+      <h2>Expérience Professionnelle</h2>
+      <div id="experience-list"></div>
+      <button id="add-experience">Ajouter une expérience</button>
+    </section>
+
+    <section class="education">
+      <h2>Éducation</h2>
+      <div id="education-list"></div>
+      <button id="add-education">Ajouter une formation</button>
+    </section>
+
+    <section class="skills">
+      <h2>Compétences</h2>
+      <div id="skills-list"></div>
+      <button id="add-skill">Ajouter une compétence</button>
+    </section>
+
+    <section class="projects">
+      <h2>Projets</h2>
+      <div id="projects-list"></div>
+      <button id="add-project">Ajouter un projet</button>
+    </section>
+
+    <section class="certifications">
+      <h2>Certifications</h2>
+      <div id="certifications-list"></div>
+      <button id="add-certification">Ajouter une certification</button>
+    </section>
+
+    <section class="interests">
+      <h2>Intérêts & Loisirs</h2>
+      <form id="interests-form">
+        <textarea id="interests-text" rows="4" placeholder="Décrivez vos intérêts et loisirs..."></textarea>
+      </form>
+    </section>
+
+    <section class="contact">
+      <h2>Contactez-moi</h2>
+      <form action="mailto:your.email@example.com" method="post" enctype="text/plain">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    // Add event listeners for the "add" buttons
+document.getElementById('add-experience').addEventListener('click', addExperience);
+document.getElementById('add-education').addEventListener('click', addEducation);
+document.getElementById('add-skill').addEventListener('click', addSkill);
+document.getElementById('add-project').addEventListener('click', addProject);
+document.getElementById('add-certification').addEventListener('click', addCertification);
+
+function addExperience() {
+  const experienceList = document.getElementById('experience-list');
+  const experienceForm = document.createElement('div');
+  experienceForm.classList.add('experience-form');
+  experienceForm.innerHTML = `
+    <label for="job-title">Titre du poste :</label>
+    <input type="text" id="job-title" name="job-title" required>
+    <label for="company-name">Nom de l'entreprise :</label>
+    <input type="text" id="company-name" name="company-name" required>
+    <label for="job-date">Date :</label>
+    <input type="text" id="job-date" name="job-date" required>
+    <label for="job-responsibilities">Responsabilités :</label>
+    <textarea id="job-responsibilities" name="job-responsibilities" required></textarea>
+  `;
+  experienceList.appendChild(experienceForm);
+}
+
+function addEducation() {
+  const educationList = document.getElementById('education-list');
+  const educationForm = document.createElement('div');
+  educationForm.classList.add('education-form');
+  educationForm.innerHTML = `
+    <label for="degree">Diplôme :</label>
+    <input type="text" id="degree" name="degree" required>
+    <label for="school-name">Nom de l'école :</label>
+    <input type="text" id="school-name" name="school-name" required>
+    <label for="school-date">Date :</label>
+    <input type="text" id="school-date" name="school-date" required>
+    <label for="school-description">Description :</label>
+    <textarea id="school-description" name="school-description" required></textarea>
+  `;
+  educationList.appendChild(educationForm);
+}
+
+function addSkill() {
+  const skillsList = document.getElementById('skills-list');
+  const skillForm = document.createElement('div');
+  skillForm.classList.add('skill-form');
+  skillForm.innerHTML = `
+    <label for="skill-name">Compétence :</label>
+    <input type="text" id="skill-name" name="skill-name" required>
+    <label for="skill-level">Niveau :</label>
+    <input type="range" id="skill-level" name="skill-level" min="1" max="100" value="50" required>
+    <span id="skill-level-value">50</span>
+  `;
+  skillsList.appendChild(skillForm);
+
+  const skillLevelInput = skillForm.querySelector('#skill-level');
+  const skillLevelValue = skillForm.querySelector('#skill-level-value');
+  skillLevelInput.addEventListener('input', function() {
+    skillLevelValue.textContent = skillLevelInput.value;
+  });
+}
+
+function addProject() {
+  const projectsList = document.getElementById('projects-list');
+  const projectForm = document.createElement('div');
+  projectForm.classList.add('project-form');
+  projectForm.innerHTML = `
+    <label for="project-title">Titre du projet :</label>
+    <input type="text" id="project-title" name="project-title" required>
+    <label for="project-description">Description :</label>
+    <textarea id="project-description" name="project-description" required></textarea>
+  `;
+  projectsList.appendChild(projectForm);
+}
+
+function addCertification() {
+  const certificationsList = document.getElementById('certifications-list');
+  const certificationForm = document.createElement('div');
+  certificationForm.classList.add('certification-form');
+  certificationForm.innerHTML = `
+    <label for="certification-title">Titre de la certification :</label>
+    <input type="text" id="certification-title" name="certification-title" required>
+    <label for="certification-date">Date :</label>
+    <input type="text" id="certification-date" name="certification-date" required>
+  `;
+  certificationsList.appendChild(certificationForm);
+}
+
+  </script>
+</body>
+</html>

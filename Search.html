@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash or Pass</title>
+    <link rel="stylesheet" href="g.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Love Alarme Logo" class="logo">
+       
+    </header>
+    <main>
+        <div class="menu-button" onclick="toggleMenu()">
+            &#9776; Menu
+        </div>
+        <div class="sidebar" id="sidebar">
+           
+            <ul class="menu">
+                <li> <input type="text" class="search-bar" placeholder="Rechercher..."></li>
+                <li><a href="#messagerie">Messagerie</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#parametres">Paramètres</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <button id="prevBtn" class="navBtn prevBtn">❮</button>
+            <div class="profile-card">
+                <div class="profile active" id="profile1">
+                    <img src="ll.jpg" alt="Profile Picture" class="profile-picture">
+                    <h2>Nom </h2>
+                    <div class="profile-info">
+                        <div class="info-box">
+                            <p><strong>Âge:</strong> 25</p>
+                        </div>
+                        <div class="info-box">
+                            <p><strong>Description:</strong> Gym</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile" id="profile2">
+                    <img src="ll.jpg" alt="Profile Picture" class="profile-picture">
+                    <h2>Nom </h2>
+                    <div class="profile-info">
+                        <div class="info-box">
+                            <p><strong>Âge:</strong> 25</p>
+                        </div>
+                        <div class="info-box">
+                            <p><strong>Description:</strong> Gym</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <button id="nextBtn" class="navBtn nextBtn">❯</button>
+        </div>
+        <div class="hearts" id="hearts"></div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                sidebar.style.left = '-300px';
+            } else {
+                sidebar.classList.add('active');
+                sidebar.style.left = '0';
+            }
+        }
+    </script>
+    <script>
+        // scripts.js
+document.addEventListener('DOMContentLoaded', () => {
+    const profiles = document.querySelectorAll('.profile');
+    let currentProfileIndex = 0;
+
+    const showProfile = (index) => {
+        profiles.forEach((profile, i) => {
+            profile.classList.remove('active');
+            if (i === index) {
+                profile.classList.add('active');
+            }
+        });
+    };
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        currentProfileIndex = (currentProfileIndex + 1) % profiles.length;
+        showProfile(currentProfileIndex);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        currentProfileIndex = (currentProfileIndex - 1 + profiles.length) % profiles.length;
+        showProfile(currentProfileIndex);
+    });
+
+    // Initialize the first profile as active
+    showProfile(currentProfileIndex);
+});
+
+    </script>
+</body>
+</html>

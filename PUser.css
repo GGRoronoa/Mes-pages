@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card .card-body {
+    padding: 1.5rem;
+    background-color: #ff9999;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.badge {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    
+}
+

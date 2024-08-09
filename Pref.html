@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préférences de Rencontres</title>
+    <link rel="stylesheet" href="Pref.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ajouts de Préférences</h1>
+        <p>Nous savons que chaque rencontre compte et que vos préférences sont uniques. C'est pourquoi nous avons mis à jour notre section des préférences pour vous offrir une expérience plus personnalisée. Découvrez nos nouvelles options et définissez vos critères de rencontre idéaux :</p>
+
+        <form>
+            
+
+           
+
+            <div class="preference-section">
+                <h2>Préférences d'âge</h2>
+                <label for="age">Tranche d'âge :</label>
+                <input type="number" id="age-min" name="age-min" placeholder="Min" min="18">
+                <input type="number" id="age-max" name="age-max" placeholder="Max" min="18">
+            </div>
+
+            <div class="preference-section">
+                <h2>Préférences d'activités et intérêts</h2>
+                <p>Vis tes Passions à fond. Maintenant go les partager avec les autres.</p>
+                <div class="interests-container">
+                    <button type="button" class="interest">Harry Potter</button>
+                    <button type="button" class="interest">Génération 90</button>
+                    <button type="button" class="interest">SoundCloud</button>
+                    <button type="button" class="interest">Spa</button>
+                    <button type="button" class="interest">Prendre soin de soi</button>
+                    <button type="button" class="interest">Heavy metal</button>
+                    <button type="button" class="interest">Fêtes à domicile</button>
+                    <button type="button" class="interest">Gin tonic</button>
+                    <button type="button" class="interest">Gymnastique</button>
+                    <button type="button" class="interest">Hot yoga</button>
+                    <button type="button" class="interest">Méditation</button>
+                    <button type="button" class="interest">Spotify</button>
+                    <button type="button" class="interest">Sushi</button>
+                    <button type="button" class="interest">Hockey</button>
+                    <button type="button" class="interest">Basket-ball</button>
+                    <button type="button" class="interest">Slam</button>
+                    <button type="button" class="interest">Sport à la maison</button>
+                    <button type="button" class="interest">Théâtre</button>
+                    <button type="button" class="interest">Tournée des cafés</button>
+                    <button type="button" class="interest">Aquarium</button>
+                    <button type="button" class="interest">Sneakers</button>
+                    <button type="button" class="interest">Instagram</button>
+                    <button type="button" class="interest">Sources d'eau chaude</button>
+                    <button type="button" class="interest">Marche à pied</button>
+                    <button type="button" class="interest">Course à pied</button>
+                    <button type="button" class="interest">Voyage</button>
+                    <button type="button" class="interest">Discussion dans une autre langue</button>
+                    <button type="button" class="interest">Cinéma</button>
+                    <button type="button" class="interest">Guitaristes</button>
+                    <button type="button" class="interest">Développement social</button>
+                    <button type="button" class="interest">Sport</button>
+                    <button type="button" class="interest">Réseaux sociaux</button>
+                    <button type="button" class="interest">Hip-hop</button>
+                    <button type="button" class="interest">Cosmétiques</button>
+                    <button type="button" class="interest">J-Pop</button>
+                    <button type="button" class="interest">Chicha</button>
+                    <button type="button" class="interest">Cricket</button>
+                    <button type="button" class="interest">Freelance</button>
+                    <button type="button" class="interest">Skateboard</button>
+                    <button type="button" class="interest">Gospel</button>
+                    <button type="button" class="interest">K-Pop</button>
+                    <button type="button" class="interest">Fan de Harry Potter</button>
+                    <button type="button" class="interest">Essayer de nouvelles choses</button>
+                    <button type="button" class="interest">Photographie</button>
+                    <button type="button" class="interest">Bollywood</button>
+                    <button type="button" class="interest">Lecture</button>
+                </div>
+                <button type="submit">Enregistrer (0/5)</button>
+            </div>
+            <button type="submit">Mettre à jour les préférences</button>
+        </form>
+    </div>
+    <script>
+        const interests = document.querySelectorAll('.interest');
+        let selectedInterests = [];
+
+        interests.forEach(interest => {
+            interest.addEventListener('click', () => {
+                if (selectedInterests.includes(interest.textContent)) {
+                    selectedInterests = selectedInterests.filter(i => i !== interest.textContent);
+                    interest.classList.remove('selected');
+                } else if (selectedInterests.length < 5) {
+                    selectedInterests.push(interest.textContent);
+                    interest.classList.add('selected');
+                }
+                document.querySelector('button[type="submit"]').textContent = `Enregistrer (${selectedInterests.length}/5)`;
+            });
+        });
+    </script>
+</body>
+</html>

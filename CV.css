@@ -1,0 +1,159 @@
+/* Styles de base */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Conteneur principal */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* En-tête */
+.header {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-bottom: 20px;
+}
+
+.profile-pic img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 5px solid white;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Sections */
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards;
+}
+
+section:nth-of-type(even) {
+  animation-delay: 0.5s;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Titres de section */
+h2 {
+  color: #ff7e5f;
+  border-bottom: 2px solid #feb47b;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+/* Formulaires et boutons */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #76c7c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #64a3a1;
+}
+
+/* Compétences */
+.skills .skill {
+  margin-bottom: 10px;
+}
+
+.skills .progress-bar {
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.skills .progress {
+  background: #76c7c0;
+  height: 20px;
+  transition: width 1s;
+}
+
+/* Formulaire de contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact label {
+  margin-top: 10px;
+  color: #333;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #76c7c0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact button:hover {
+  background-color: #64a3a1;
+}

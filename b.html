@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Un Compte</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Créer Un Compte</h1>
+        <form>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Prénom">
+
+            <label for="email">Adresse e-mail</label>
+            <input type="email" id="email" name="email" placeholder="Adresse e-mail">
+
+            <label for="anniversaire">Anniversaire</label>
+            <div class="birthday">
+                <input type="text" id="jour" name="jour" placeholder="JJ">
+                <input type="text" id="mois" name="mois" placeholder="MM">
+                <input type="text" id="annee" name="annee" placeholder="AAAA">
+            </div>
+
+            <label for="genre">Genre</label>
+            <div class="genre">
+                <input type="radio" id="homme" name="genre" value="homme">
+                <label for="homme">Homme</label>
+                <input type="radio" id="femme" name="genre" value="femme">
+                <label for="femme">Femme</label>
+                <input type="radio" id="plus" name="genre" value="plus">
+                <label for="plus">Plus</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="afficher-genre" name="afficher-genre">
+                <label for="afficher-genre">Afficher mon genre sur mon profil</label>
+            </div>
+
+            <label for="orientation">Orientation sexuelle</label>
+            <select id="orientation" name="orientation">
+                <option value="heterosexual">Hétérosexuel</option>
+                <option value="homosexual">Homosexuel</option>
+                <option value="bisexual">Bisexuel</option>
+                <option value="asexual">Asexuel</option>
+                <option value="other">Autre</option>
+            </select>
+
+            <div class="photos-de-profil">
+                <h2>Photos de profil</h2>
+                <div class="photo-grid">
+                    <div class="photo-slot">
+                        <input type="file" id="photo-upload" name="photo-upload" accept="image/*">
+                    </div>
+                </div>
+                <p>Télécharge une photo pour commencer.</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

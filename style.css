@@ -1,0 +1,175 @@
+body{
+    font-family: fantasy;
+}
+
+
+
+
+.container{
+    width: 2000px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+
+.logo{
+    color: white;
+    cursor: pointer;
+    
+    
+}
+
+ nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.active{
+    border-bottom: 4px solid red;
+
+}
+
+nav ul li:hover
+{
+    color: red;
+}
+
+.btn{
+    display: block;
+    margin: auto ;
+    font-size:15px ;
+    font-weight: lighter;
+    color: #333;
+    padding: 10px;
+    background: skyblue;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 6px blue;
+
+}
+
+.btn:hover
+{
+    background: pink;
+    color: blue;
+}
+
+@keyframes animate{
+    0%,100%{
+        background-image: url(P1.jpg);
+    }
+    25%{
+        background-image: url(P4.jpg);
+    }
+    50%{
+        background-image: url(P5.jpg);
+    }
+    75%{
+        background-image: url(P6.jpg);
+    }
+}
+
+.content{
+    background-image: url(C3.jpg);
+    background-size: 2000px 700px;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #333;
+    height: 100vh;
+
+    
+}
+.content h1{
+    font-size: 40px;
+}
+.content p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.content button{
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    background: skyblue;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.categories_text{
+    text-align: left;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-left: 80px;
+    color: #333;
+}
+
+.section_categories{
+    padding: 40px 5%;
+}
+
+.categories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+}
+
+.categories .carte{
+    width: 310px;
+    background: whitesmoke;
+    bottom: 0 10px 20px black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.categories .carte img{
+    height: 250px;
+    width: 100%;
+}
+
+.categories.carte.desc{
+    padding: 5px 20px;
+    opacity: 0.8;
+}
+.categories.carte.box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.categories.carte.box.check{
+    font-size: 13px;
+    font-weight: 900;
+    color: red;
+    padding: 10px 18px;
+    border-radius: 5px;
+}
+.hello{
+    position: relative;
+    left: 0%;
+    height: 172px;
+
+}

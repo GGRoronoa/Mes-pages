@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messagerie</title>
+    <link rel="stylesheet" href="Mail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Messagerie</h1>
+    </header>
+    <div class="menu-button" onclick="toggleMenu()">
+        &#9776; Menu
+    </div>
+    <div class="sidebar" id="sidebar">
+       
+        <ul class="menu">
+            <li>
+                <div class="search-box">
+                    <input type="text" placeholder="Rechercher...">
+                    <button>Search</button>
+                </div>
+            </li>
+            <li><a href="#messagerie">Messagerie  <i class="fas fa-envelope"></i></a></li>
+            <li><a href="#profil">Profil  <i class="fas fa-user"></i></a></li>
+            <li><a href="#parametres">Paramètres  <i class="fas fa-cog"></i></a></li>
+        </ul>
+    </div>
+    <div class="messaging-container">
+        <div class="contacts">
+            <h2>Contacts</h2>
+            <ul>
+                <li class="contact active">Lionel Messi</li>
+                <li class="contact">Jean-Marie</li>
+                <li class="contact">Inconnu</li>
+                <li class="contact">Chef Sco</li>
+            </ul>
+        </div>
+        <div class="chat-window">
+            <div class="chat-header">
+                <h2>Lionel Messi</h2>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    <p>Bonjour ! Comment vas-tu ?</p>
+                </div>
+                <div class="message sent">
+                    <p>Salut! Je vais bien, merci. Et toi ?</p>
+                </div>
+                <div class="message received">
+                    <p>Je vais très bien, merci !</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Écrire un message...">
+                <button>Envoyer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                sidebar.style.left = '-300px';
+            } else {
+                sidebar.classList.add('active');
+                sidebar.style.left = '0';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+body {
+    background-color: #ffcccc; /* Une couleur rose pâle qui évoque l'amour */
+    color: #330000; /* Couleur de texte sombre pour le contraste */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ff9999; /* Une couleur rose plus foncée pour le conteneur */
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #660000; /* Une couleur rouge foncé pour le titre */
+    border-bottom: 1px solid #660000;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #660000; /* Une couleur rouge foncé pour les étiquettes */
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    background-color: #ffe6e6; /* Une couleur rose très pâle pour les champs de texte */
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #330000;
+    margin-top: 5px;
+}
+
+.birthday {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.birthday input {
+    width: 30%;
+}
+
+.genre {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #660000;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background-color: #ff6666; /* Une couleur rouge clair pour la case cochée */
+    border: 2px solid #ff6666;
+}
+
+.photos-de-profil {
+    margin-top: 20px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+
+.photo-slot {
+    background-color: #ffe6e6; /* Une couleur rose très pâle pour les emplacements de photo */
+    border: 1px dashed #ff9999;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+}
+
+input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+p {
+    font-size: 12px;
+    color: #660000; /* Une couleur rouge foncé pour le texte d'aide */
+}
+button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background: #ff5864;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff4754;
+}

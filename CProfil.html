@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Profil - Site de Rencontre</title>
+    <link rel="stylesheet" href="CProfil.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Créer un Profil</h1>
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group phone-group">
+                    <label for="indicatif">Numéro de Téléphone :</label>
+                    <div class="phone-inputs">
+                        <select id="indicatif" name="indicatif" required>
+                            <option value="+1">États-Unis/Canada (+1)</option>
+                            <option value="+33">France (+33)</option>
+                            <option value="+44">Royaume-Uni (+44)</option>
+                            <option value="+49">Allemagne (+49)</option>
+                            <option value="+34">Espagne (+34)</option>
+                            <option value="+39">Italie (+39)</option>
+                            <option value="+61">Australie (+61)</option>
+                            <option value="+81">Japon (+81)</option>
+                            <option value="+86">Chine (+86)</option>
+                            <!-- Ajoutez plus d'indicatifs ici -->
+                        </select>
+                        <input type="tel" id="telephone" name="telephone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profession">Profession :</label>
+                    <input type="text" id="profession" name="profession" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date_naissance">Date de Naissance :</label>
+                    <input type="date" id="date_naissance" name="date_naissance" required>
+                </div>
+                <div class="form-group">
+                    <label for="lieu_naissance">Lieu de Naissance :</label>
+                    <input type="text" id="lieu_naissance" name="lieu_naissance" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="genre">Genre :</label>
+                    <select id="genre" name="genre" required>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taille">Taille (cm) :</label>
+                    <input type="number" id="taille" name="taille" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="type_corps">Type de Corps :</label>
+                    <select id="type_corps" name="type_corps" required>
+                        <option value="Mince">Mince</option>
+                        <option value="Athlétique">Athlétique</option>
+                        <option value="Moyen">Moyen</option>
+                        <option value="Rond">Rond</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="orientation_sexuelle">Orientation Sexuelle :</label>
+                    <select id="orientation_sexuelle" name="orientation_sexuelle" required>
+                        <option value="Hétérosexuel">Hétérosexuel</option>
+                        <option value="Homosexuel">Homosexuel</option>
+                        <option value="Bisexuel">Bisexuel</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="photos">Ajouter des Photos de Profil (jusqu'à 6) :</label>
+                <div class="photo-inputs">
+                    <label class="photo-upload">
+                        <input type="file" id="photo1" name="photo1" accept="image/*" required>
+                        <span>+</span>
+                    </label>
+                    <label class="photo-upload">
+                        <input type="file" id="photo2" name="photo2" accept="image/*">
+                        <span>+</span>
+                    </label>
+                    <label class="photo-upload">
+                        <input type="file" id="photo3" name="photo3" accept="image/*">
+                        <span>+</span>
+                    </label>
+                    <label class="photo-upload">
+                        <input type="file" id="photo4" name="photo4" accept="image/*">
+                        <span>+</span>
+                    </label>
+                    <label class="photo-upload">
+                        <input type="file" id="photo5" name="photo5" accept="image/*">
+                        <span>+</span>
+                    </label>
+                    <label class="photo-upload">
+                        <input type="file" id="photo6" name="photo6" accept="image/*">
+                        <span>+</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <button type="submit">Créer le Profil</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
